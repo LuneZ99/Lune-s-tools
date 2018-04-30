@@ -8,6 +8,7 @@ window = tk.Tk()
 window.title('拼图软件v0.1')
 window.geometry('300x100')
 
+
 def choose_pic():
     global filenames
     filenames = tkinter.filedialog.askopenfilenames()
@@ -25,15 +26,16 @@ def choose_pic():
         key+=1
     print('图片读取完成,读取了%d张\n'%len(filenames))
 
+
 def run():
     var1 = var.get()
+
     def wid0(dic, width):
         for j in dic:
             wid1, hig1 = dic[j].size
             if wid1 != width:
                 dic[j] = dic[j].resize((width, hig1 * width // wid1))
         print('图像大小调整完成...')
-
 
     choose_pic()
     wid = var1
@@ -54,6 +56,7 @@ def run():
         tk.messagebox.showinfo(title='hi',message='成功')
     else:
         pass
+
 
 dic={}
 
